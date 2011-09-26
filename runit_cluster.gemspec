@@ -7,9 +7,9 @@ Gem::Specification.new do |s|
   s.version     = RunitCluster::VERSION
   s.authors     = ["Maxim Filatov"]
   s.email       = ["pipopolam@gmail.com"]
-  s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.homepage    = "https://github.com/pantsu/runit_cluster"
+  s.summary     = %q{Multiple runit-man management tool}
+  s.description = %q{Sinatra-based web interface for management multiple installations of runit-man}
 
   s.rubyforge_project = "runit_cluster"
 
@@ -19,6 +19,13 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   # specify any dependencies here; for example:
-  # s.add_development_dependency "rspec"
-  # s.add_runtime_dependency "rest-client"
+  s.add_dependency 'sinatra'
+  s.add_dependency 'sinatra-config-file'
+  s.add_dependency 'yajl-ruby'
+  s.add_dependency 'haml'
+  s.add_dependency 'i18n'
+  s.add_development_dependency 'rake'
+  s.add_development_dependency 'rspec'
+  s.add_development_dependency 'rack-test'
+
 end
