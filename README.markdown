@@ -4,8 +4,8 @@ Web interface for management multiple installations of runit.
 
 Based on
 
-* [runit](http://smarden.org/runit/)
 * [Sinatra](http://www.sinatrarb.com/)
+* [runit-man](https://github.com/Undev/runit-man)
 
 ## Installation
 
@@ -13,7 +13,7 @@ It seems we need to write down something here
 
 ## Configuration
 
-Customize your `host_config.rb` file with instances of your cluster.
+Customize your `host_config.yml` file with instances of your cluster.
 You need to define credentials to each host
 
 1. Hostname
@@ -49,17 +49,17 @@ You can manage your services with supported commands:
 -  switch\_up (*activates service*)
 -  switch\_down (*deactivates service*)
 
-Also your can send a signal to any running process:
+Also your can send any signal from a list to any running process:
 
-- t: TERM
-- k: KILL
-- i: INT
-- 1: USR1
-- 2: USR2
-- a: ALARM
-- q: QUIT
-- x: EXIT
-- p: PAUSE
-- c: CONT
-- h: HUP
-- o: ONCE
+-  TERM
+-  KILL
+-  INT
+-  USR1
+-  USR2
+-  ALARM
+-  QUIT
+-  EXIT
+-  PAUSE
+-  CONT
+-  HUP
+-  ONCE
