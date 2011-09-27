@@ -21,6 +21,21 @@ You need to define credentials to each host
 3. Login
 4. Password
 
+Example:
+
+    -
+      host: host1
+      addr: 192.168.0.1
+      port: 4567
+      login: user1
+      pass: password1
+    -
+      host: host2
+      addr: 192.168.0.2
+      port: 4567
+      login: user2
+      pass: password2
+
 ## Interface
 
 Runit cluster provides interface similar to [runit-man](https://github.com/Undev/runit-man), but with aggregated data from all configured hosts.
