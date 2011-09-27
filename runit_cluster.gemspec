@@ -5,8 +5,8 @@ require "runit_cluster/version"
 Gem::Specification.new do |s|
   s.name        = "runit_cluster"
   s.version     = RunitCluster::VERSION
-  s.authors     = ["Maxim Filatov", "Nick Kugaevsky"]
-  s.email       = ["pipopolam@gmail.com", "nick@kugaevsky.ru"]
+  s.authors     = ["Maxim Filatov", "Nick Kugaevsky", "Valentin Eremin"]
+  s.email       = ["pipopolam@gmail.com", "nick@kugaevsky.ru", "valentin.a.eremin@gmail.com"]
   s.homepage    = "https://github.com/pantsu/runit_cluster"
   s.summary     = %q{Multiple runit-man management tool}
   s.description = %q{Sinatra-based web interface for management multiple installations of runit-man}
