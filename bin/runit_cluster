@@ -1,3 +1,24 @@
 #!/usr/bin/env ruby
 
 require "runit_cluster"
+require "optparse"
+require "yaml"
+
+# Command line arguments parsing
+options = {}
+OptionParser.new do |opts|
+  opts.banner = "Usage: runit_cluster [options]"
+
+  opts.on("-c", "--config CONFIG_FILE", "Use CONFIG_FILE as config file") do |conf|
+    options[:conf] = conf
+  end
+  opts.on("-v", "--version", "Show version and quit") do |v|
+    puts "RunitCluster version #{RunitCluster::VERSION}"
+    exit(0)
+  end
+end.parse!
+
+raise "Missing config file" unless options[:conf]
+hosts = YAML.load_file(options[:conf])
+RunitCluster::Config.setup :hosts => hosts
+puts RunitCluster::Config[:hosts]
