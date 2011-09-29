@@ -24,8 +24,10 @@ Gem::Specification.new do |s|
   s.add_dependency 'yajl-ruby'
   s.add_dependency 'haml'
   s.add_dependency 'i18n'
+  s.add_dependency 'faraday-stack'
   s.add_development_dependency 'rake'
   s.add_development_dependency 'rspec'
   s.add_development_dependency 'rack-test'
+  s.add_development_dependency 'nokogiri'
 
 end
