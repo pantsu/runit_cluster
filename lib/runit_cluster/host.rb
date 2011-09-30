@@ -5,9 +5,10 @@ module  RunitCluster
     attr_accessor :connection
 
     def initialize(hash)
-      @connection = FaradayStack.build("http://#{hash['addr']}:#{hash['port']}")
+      hash = hash.inject({}){|memo,(k,v)| memo[k.to_sym] = v; memo}
+      @connection = FaradayStack.build("http://#{hash[:addr]}:#{hash[:port]}")
       if hash.keys.include? "login"
-        @connection.headers['Authorization'] = "Basic #{Base64.encode64([hash['login'], hash['pass']].join(':')).chomp}"
+        @connection.headers['Authorization'] = "Basic #{Base64.encode64([hash[:login], hash[:pass]].join(':')).chomp}"
       end
     end
 
@@ -20,10 +21,8 @@ module  RunitCluster
     end
 
     def method_missing(method, *args, &block)
-      if COMMANDS.include?(method)
-        define_method(method) do
-          manage(args[0], method)
-        end
+      if COMMANDS.include?(method.to_s)
+        manage(args[0], method.to_s)
       else
         super
       end
