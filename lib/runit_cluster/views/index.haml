@@ -1,0 +1,8 @@
+- RunitCluster::Config[:hosts].each do |host|
+  - connector = RunitCluster::Host.new(host)
+  %p= host["addr"]
+  - unless connector.services.empty?
+    .services
+      - connector.services.each do |service|
+        .name= service["name"]
+        .state= service["stat"]
